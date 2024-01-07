@@ -1,0 +1,118 @@
+:root {
+  --primary-color: #003699;
+  --dark-color: #333333;
+  --light-color: #f4f4f4;
+  --lose-color: #dc3545;
+  --win-color: #28a745;
+  --modal-duration: 1s;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.result-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box {
+  color: white;
+  width: 50%;
+  text-align: center;
+  padding: 10px 5px;
+  font-size: 1.2rem;
+}
+
+.player_box {
+  background-color: var(--primary-color);
+}
+
+.computer_box {
+  background-color: var(--dark-color);
+}
+
+.elements_box {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  max-width: 700px;
+  margin-top: 60px;
+}
+
+.el {
+  font-size: 160px !important;
+  font-weight: 900;
+}
+
+.el:hover {
+  color: var(--primary-color);
+}
+
+.title_select {
+  text-align: center;
+  font-weight: 800;
+  font-family: "Roboto", sans-serif;
+}
+
+.modal {
+  position: absolute;
+  max-width: 300px;
+  max-height: 300px;
+  width: 100%;
+  height: 100%;
+  left: 40%;
+  top: 25%;
+  border-radius: 10px;
+  padding: 10px 5px;
+  box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.61);
+  display: none;
+  background-color: rgba(253, 247, 247, 1);
+  z-index: 99;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.show_overlay {
+  opacity: 1;
+  backdrop-filter: blur(3px) brightness(70%);
+}
+
+.show_modal {
+  display: block;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.modal__title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.el_modal {
+  font-size: 100px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.just {
+  text-align: center;
+}
+
+.active_element_box {
+  pointer-events: none;
+}
