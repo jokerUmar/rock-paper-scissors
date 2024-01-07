@@ -23,21 +23,21 @@ function getComputerChoice() {
 
 rock.addEventListener("click", function () {
   playerChoice = "rock";
-  getWinner(playerChoice, getComputerChoice());
-  increasWinner(getWinner(playerChoice, getComputerChoice()));
-  showModal(getComputerChoice(), getWinner(playerChoice, getComputerChoice()));
+  let winner = getWinner(playerChoice, getComputerChoice());
+  increasWinner(winner);
+  showModal(getComputerChoice(), winner);
 });
 paper.addEventListener("click", function () {
   playerChoice = "paper";
-  getWinner(playerChoice, getComputerChoice());
-  increasWinner(getWinner(playerChoice, getComputerChoice()));
-  showModal(getComputerChoice(), getWinner(playerChoice, getComputerChoice()));
+  let winner = getWinner(playerChoice, getComputerChoice());
+  increasWinner(winner);
+  showModal(getComputerChoice(), winner);
 });
 scissors.addEventListener("click", function () {
   playerChoice = "scissors";
-  getWinner(playerChoice, getComputerChoice());
-  increasWinner(getWinner(playerChoice, getComputerChoice()));
-  showModal(getComputerChoice(), getWinner(playerChoice, getComputerChoice()));
+  let winner = getWinner(playerChoice, getComputerChoice());
+  increasWinner(winner);
+  showModal(getComputerChoice(), winner);
 });
 
 function getWinner(player, computer) {
@@ -65,11 +65,15 @@ function getWinner(player, computer) {
 }
 
 function increasWinner(winner) {
+  console.log(winner);
   if (winner == "player") {
     player_number++;
     player_result.textContent = player_number;
   } else if (winner == "computer") {
     computer_number++;
+    computer_result.textContent = computer_number;
+  } else if ((winner = "draw")) {
+    player_result.textContent = player_number;
     computer_result.textContent = computer_number;
   }
 }
@@ -115,5 +119,5 @@ function closeModal() {
 }
 
 overlay.addEventListener("click", function () {
-  closeModal()
+  closeModal();
 });
