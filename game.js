@@ -23,21 +23,24 @@ function getComputerChoice() {
 
 rock.addEventListener("click", function () {
   playerChoice = "rock";
-  let winner = getWinner(playerChoice, getComputerChoice());
+  let computerChoice = getComputerChoice();
+  let winner = getWinner(playerChoice, computerChoice);
   increasWinner(winner);
-  showModal(getComputerChoice(), winner);
+  showModal(computerChoice, winner);
 });
 paper.addEventListener("click", function () {
   playerChoice = "paper";
-  let winner = getWinner(playerChoice, getComputerChoice());
+  let computerChoice = getComputerChoice();
+  let winner = getWinner(playerChoice, computerChoice);
   increasWinner(winner);
-  showModal(getComputerChoice(), winner);
+  showModal(computerChoice, winner);
 });
 scissors.addEventListener("click", function () {
   playerChoice = "scissors";
-  let winner = getWinner(playerChoice, getComputerChoice());
+  let computerChoice = getComputerChoice();
+  let winner = getWinner(playerChoice, computerChoice);
   increasWinner(winner);
-  showModal(getComputerChoice(), winner);
+  showModal(computerChoice, winner);
 });
 
 function getWinner(player, computer) {
@@ -65,7 +68,6 @@ function getWinner(player, computer) {
 }
 
 function increasWinner(winner) {
-  console.log(winner);
   if (winner == "player") {
     player_number++;
     player_result.textContent = player_number;
